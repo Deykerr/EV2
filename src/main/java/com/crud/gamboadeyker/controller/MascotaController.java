@@ -17,7 +17,7 @@ import com.crud.gamboadeyker.service.MascotaService;
 public class MascotaController {
 
 	@Autowired
-	private MascotaService mascotaService; 
+	MascotaService mascotaService; 
 
 	
 

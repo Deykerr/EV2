@@ -11,7 +11,7 @@ import lombok.Data;
 public class Mascota {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private Long id;
 	private String nombre;
 	private String tipo;
 	private String raza;
@@ -19,10 +19,6 @@ public class Mascota {
 	private String dueno;
 	private LocalDateTime fechaCreacion;
 	private LocalDateTime ultimaModificacion;
-	
-	
-	
-	
-	
+			
 
 }

@@ -17,8 +17,7 @@ public class MascotaRequest {
 	private String raza;
 	private String edad;
 	private String dueno;
-	private LocalDateTime fechaCreacion;
-	private LocalDateTime ultimaModificacion;
+	
 	
 
 	

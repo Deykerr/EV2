@@ -1,4 +1,4 @@
-package com.crud.gambodeyker.service.mapper;
+package com.crud.gamboadeyker.service.mapper;
 
 import java.util.ArrayList;
 import java.util.Collection;

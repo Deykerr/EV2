@@ -1,4 +1,4 @@
-package com.crud.gambodeyker.repository;
+package com.crud.gamboadeyker.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.crud.gamboadeyker.model.Mascota;
 
 
-
-public interface MascotaRepository extends JpaRepository<Mascota, Long>{
+@Repository
+public interface MascotaRepository extends  JpaRepository<Mascota, Long>{
 
 }

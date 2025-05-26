@@ -1,5 +1,6 @@
 package com.crud.gamboadeyker.service.impl;
 
+import java.time.LocalDateTime;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,23 +9,20 @@ import org.springframework.stereotype.Service;
 import com.crud.gamboadeyker.controller.dto.MascotaRequest;
 import com.crud.gamboadeyker.controller.dto.MascotaResponse;
 import com.crud.gamboadeyker.model.Mascota;
+import com.crud.gamboadeyker.repository.MascotaRepository;
 import com.crud.gamboadeyker.service.MascotaService;
-import com.crud.gambodeyker.repository.MascotaRepository;
-import com.crud.gambodeyker.service.mapper.MascotaMapper;
+import com.crud.gamboadeyker.service.mapper.MascotaMapper;
+
+
 
 @Service
 public class MascotaServiceImpl implements MascotaService{
 	
+	@Autowired
+	private MascotaRepository mascotaRepository;
 
-	private final MascotaRepository mascotaRepository;
-
-
-	private final MascotaMapper mascotaMapper;
-	public MascotaServiceImpl (MascotaMapper mascotaMapper, MascotaRepository mascotaRepository) {
-		this.mascotaRepository = mascotaRepository;
-		this.mascotaMapper = mascotaMapper;
-		
-	}
+	@Autowired
+    private MascotaMapper mascotaMapper;
 	
 
 	@Override
@@ -50,8 +48,8 @@ public class MascotaServiceImpl implements MascotaService{
 		mascotaNew.setRaza(request.getRaza());
 		mascotaNew.setEdad(request.getEdad());
 		mascotaNew.setDueno(request.getDueno());
-		mascotaNew.setFechaCreacion(request.getFechaCreacion());
-		mascotaNew.setUltimaModificacion(request.getUltimaModificacion());
+		mascotaNew.setFechaCreacion(LocalDateTime.now());
+		mascotaNew.setUltimaModificacion(LocalDateTime.now());
 		mascotaRepository.save(mascotaNew);
 	}
 
@@ -64,8 +62,8 @@ public class MascotaServiceImpl implements MascotaService{
 			mascota.setRaza(request.getRaza());
 			mascota.setEdad(request.getEdad());
 			mascota.setDueno(request.getDueno());
-			mascota.setFechaCreacion(request.getFechaCreacion());
-			mascota.setUltimaModificacion(request.getUltimaModificacion());
+			//mascota.setFechaCreacion(LocalDateTime.now());
+			mascota.setUltimaModificacion(LocalDateTime.now());
 			mascotaRepository.save(mascota);
 		}
 	}
